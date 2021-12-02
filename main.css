@@ -1,0 +1,186 @@
+/*****
+
+
+Colors
+Primary
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+Neutral
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+
+Typography
+Body Copy
+- Font size: 15px
+Fonts
+- Family: Poppins
+- Weights: 200, 400, 600
+
+*****/
+
+:root {
+  /* COLORS */
+  /* primary */
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+
+  /* neutral */
+  --neutral-vdarkblue: hsl(234, 12%, 34%);
+  --neutral-grayishblue: hsl(229, 6%, 66%);
+  --neutral-vlightgray: hsl(0, 0%, 98%);
+
+  /* TYPOGRAPHY */
+  --bodyFont: 15px;
+
+  /* FONTS */
+  --fontFamily: "Poppins", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* reset default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img {
+  display: block;
+}
+
+body {
+  font-size: var(--bodyFont);
+  font-family: var(--fontFamily);
+  background-color: var(--neutral-vlightgray);
+}
+
+main {
+  margin: 2rem auto;
+  max-width: 320px;
+}
+
+.hero-container {
+  text-align: center;
+}
+.hero-container h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+}
+
+.hero-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-container p {
+  color: var(--neutral-grayishblue);
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* HERO BIG LAYOUT */
+@media screen and (min-width: 992px) {
+  main {
+    max-width: 1200px;
+  }
+
+  .hero-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* card container section */
+.single-card-item {
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: white;
+  margin: 1.5rem 0;
+}
+
+.single-card-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+.single-card-item p {
+  color: var(--neutral-grayishblue);
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.single-card-item img {
+  position: relative;
+  left: 70%;
+}
+
+.supervisor {
+  border-top: 3px solid var(--primary-cyan);
+}
+
+.team-builder {
+  border-top: 3px solid var(--primary-red);
+}
+
+.karma {
+  border-top: 3px solid var(--primary-orange);
+}
+
+.calculator {
+  border-top: 3px solid var(--primary-blue);
+}
+
+/* CARD SECTION BIG LAYOUT */
+@media screen and (min-width: 992px) {
+  .card-container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .single-card-item {
+    margin: 0;
+  }
+  .supervisor {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 1;
+  }
+
+  .team-builder {
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+  }
+
+  .karma {
+    grid-row-start: 3;
+    grid-row-end: span 2;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+  }
+
+  .calculator {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 3;
+    grid-column-end: span 1;
+  }
+}
